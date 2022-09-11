@@ -1,0 +1,13 @@
+*.log
+*.aux
+*.synctex
+*.gz
+*.zip
+*.pyc
+.env
+.DS_Store
+\#*
+.#*
+jpbio/tests/temp
+*/__pycache__
+
