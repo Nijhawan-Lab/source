@@ -25,7 +25,7 @@ def pad_dict_list(l, length):
     else:
         return l
 
-def export_figure(fig, title, metadata={}):
+def export_figure(fig, title, data_directory, experiment, metadata={}):
     fig_metadata = {
         "Comment" : "experiment:" + experiment
     }
