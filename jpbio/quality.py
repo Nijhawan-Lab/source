@@ -16,7 +16,7 @@ class QualityStatistics:
         seq_length = len(read)
         self.read_counts = jpbio.util.pad_list(self.read_counts, seq_length, 0)
         self.N_counts = jpbio.util.pad_list(self.N_counts, seq_length, 0)
-        self.quality_scores = jpbio.pad_dict_list(self.quality_scores, seq_length)
+        self.quality_scores = jpbio.util.pad_dict_list(self.quality_scores, seq_length)
         self.read_lengths.append(seq_length)
 
         for i in range(seq_length):
