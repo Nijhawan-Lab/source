@@ -9,6 +9,7 @@ class QualityStatistics:
         self.read_lengths = []
         self.quality_scores = []
         self.N_counts = []
+        self.N_sequences = 0
 
     def addSequence(self, read):
         quality = read.letter_annotations["phred_quality"]
@@ -19,14 +20,17 @@ class QualityStatistics:
         self.read_lengths.append(seq_length)
 
         for i in range(seq_length):
-        self.read_counts[i] += 1
-        if read.seq[i] == 'N':
-            self.N_counts[i] += 1
-        q = read.letter_annotations["phred_quality"][i]
-        if q in self.qualtiy_scores[i]:
-            self.qualtiy_scores[i][ q ] += 1
-        else:
-            self.qualtiy_scores[i][ q ] = 1
+            self.read_counts[i] += 1
+            if read.seq[i] == 'N':
+                self.N_counts[i] += 1
+            q = read.letter_annotations["phred_quality"][i]
+            if q in self.qualtiy_scores[i]:
+                self.qualtiy_scores[i][ q ] += 1
+            else:
+                self.qualtiy_scores[i][ q ] = 1
+        
+        self.N_sequences += 1
+        return self.N_sequences
 
     def DiagnosticPlot(self, maintitle="Read Quality"):
 

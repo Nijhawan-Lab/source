@@ -11,3 +11,4 @@
 jpbio/tests/temp
 */__pycache__
 
+jpbio/.ipynb_checkpoints/*
