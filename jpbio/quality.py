@@ -24,10 +24,10 @@ class QualityStatistics:
             if read.seq[i] == 'N':
                 self.N_counts[i] += 1
             q = read.letter_annotations["phred_quality"][i]
-            if q in self.qualtiy_scores[i]:
-                self.qualtiy_scores[i][ q ] += 1
+            if q in self.quality_scores[i]:
+                self.quality_scores[i][ q ] += 1
             else:
-                self.qualtiy_scores[i][ q ] = 1
+                self.quality_scores[i][ q ] = 1
         
         self.N_sequences += 1
         return self.N_sequences
