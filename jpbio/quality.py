@@ -77,7 +77,7 @@ class QualityStatistics:
 
         axis_read_count.set_yscale('log')
         axis_read_count.plot(self.read_counts, color='grey')
-        axis_read_count.hist(self.read_counts, range=(0,max_length), bins=25, color='lightblue')
+        axis_read_count.hist(self.read_lengths, range=(0,max_length), bins=25, color='lightblue')
         axis_read_count.set_ylabel('read count')
         axis_read_count.spines["bottom"].set_visible(True)
         axis_read_count.spines["top"].set_visible(False)
